@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klassy Watches</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: #f5f5f5;
+        color: #222;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* HEADER */
+      header {
+        width: 100%;
+        background: #f7f7f7;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .top-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 20px 40px;
+      }
+
+      .logo {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .logo span {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 6px;
+        margin-top: -5px;
+      }
+
+      .icons {
+        position: absolute;
+        right: 40px;
+        display: flex;
+        gap: 25px;
+        font-size: 28px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        padding: 22px 20px;
+        border-top: 1px solid #e1e1e1;
+        font-size: 18px;
+        letter-spacing: 3px;
+      }
+
+      nav a {
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #888;
+      }
+
+      /* MAIN */
+      .container {
+        display: flex;
+        padding: 40px 50px;
+        gap: 50px;
+      }
+
+      /* SIDEBAR */
+      .sidebar {
+        width: 250px;
+      }
+
+      .filter-title {
+        font-size: 26px;
+        letter-spacing: 4px;
+        margin-bottom: 25px;
+        margin-top: 30px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+      }
+
+      .sidebar li {
+        margin: 22px 0;
+        color: #666;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .sidebar li:hover {
+        color: #000;
+        transform: translateX(5px);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h1 {
+        font-size: 48px;
+        font-weight: 500;
+        letter-spacing: 8px;
+        margin-bottom: 15px;
+      }
+
+      .section-title p {
+        font-size: 22px;
+        color: #444;
+      }
+
+      /* PRODUCTS */
+      .products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+      }
+
+      .product-card {
+        text-align: center;
+        position: relative;
+        padding: 20px;
+        transition: 0.4s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .product-card img {
+        width: 100%;
+        max-width: 260px;
+        height: 320px;
+        object-fit: contain;
+        margin: auto;
+        display: block;
+      }
+
+      .badge {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.3;
+        padding: 10px;
+      }
+
+      .orange {
+        border: 2px solid orange;
+        color: orange;
+      }
+
+      .green {
+        border: 2px solid green;
+        color: green;
+      }
+
+      .product-title {
+        margin-top: 20px;
+        font-size: 22px;
+        line-height: 1.6;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .price {
+        margin-top: 15px;
+        font-size: 28px;
+        color: #666;
+      }
+
+      /* FOOTER BAR */
+      .bottom-bar {
+        margin-top: 40px;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+      }
+
+      .grid-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 28px;
+        color: #777;
+      }
+
+      .sort {
+        font-size: 24px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        color: #666;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1200px) {
+        .products {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .products {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title h1 {
+          font-size: 32px;
+        }
+
+        nav {
+          font-size: 14px;
+        }
+
+        .icons {
+          gap: 15px;
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          VIP
+          <span>STORE</span>
+        </div>
+
+        <div class="icons">
+          <i class="fa-regular fa-user"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <div class="container">
+      <!-- SIDEBAR -->
+
+      <!-- CONTENT -->
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="special-text mt-4 text-decoration-underline">
+              <h2>Special Menus</h2>
+            </div>
+
+            <div class="row">
+              <div
+                class="col-lg-3 col-md-4 col-sm-6"
+                data-aos="fade-right"
+                data-aos-duration="2000"
+              >
+                <a href="./detaill.html">
+                  <div class="card mt-3" style="width: 100%">
+                    <img
+                      src="https://mac-center.com.pe/cdn/shop/files/IMG-18068283_m_jpeg_1_ce1a78fd-3192-49c3-9951-7a191fea9072.jpg?v=1757450089&width=823"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <p class="card-text">IPHONE 17PROMAX</p>
+                      <button>$1499</button>
+                    </div>
+
+                    <div class="star">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="col-lg-3 col-md-4 col-sm-6"
+                data-aos="fade-down"
+                data-aos-duration="2000"
+              >
+              <a href="detall1.html"> 
+                <div class="card mt-3" style="width: 100%">
+                  <img
+                    src="https://www.firstnet.com/content/dam/firstnet/images/image-and-text/6054400-s26ultra-pen-image-text.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p class="card-text">SAMSUNG S24 ULTRA</p>
+                    <button>$1300</button>
+                  </div>
+
+                  <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                  </div>
+                </div>
+                 </a>
+              </div>
+              
+              <div
+                class="col-lg-3 col-md-4 col-sm-6"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
+                <div class="card mt-3" style="width: 100%">
+                  <img
+                    src="https://d1rlzxa98cyc61.cloudfront.net/catalog/product/cache/b23da5967f2c9ed6d73ff4418f9ea554/1/8/186600_2023.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Huawei Mate</p>
+                    <button>300 .00$</button>
+                  </div>
+
+                  <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              
+    <!-- FOOTER BAR -->
+    <div class="bottom-bar">
+      <div class="grid-icons">
+        <i class="fa-solid fa-table-cells-large"></i>
+        <i class="fa-solid fa-grip"></i>
+      </div>
+
+      <div class="sort" id="sortBtn">
+        SORT <i class="fa-solid fa-angle-down"></i>
+      </div>
+    </div>
+
+    <script>
+      // SIMPLE SORT CLICK
+      const sortBtn = document.getElementById("sortBtn");
+
+      sortBtn.addEventListener("click", () => {
+        alert("Sort menu clicked!");
+      });
+    </script>
+  </body>
+</html>
